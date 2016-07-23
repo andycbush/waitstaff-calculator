@@ -1,0 +1,152 @@
+/*
+The CSS code gets to executed from top to bottom and left ro right
+
+Basic rules to write CSS
+- write GENERAL rules first (for all the paragraph tags in the website for example) and only after that write CSS for SPECIFIC tags (for example the paragraph tags inside the footer)
+- write the css styles to define for the parent (outside) container and THEN the children (inside containers) of that parent and THEN the children (inside containers) of the child above
+*/
+
+
+/* -------------------------------------
+CSS reset
+(all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+
+/* -------------------------------------
+General styles (General Module, wrapping around the modules bellow)
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
+*/
+
+body,
+input,
+label,
+button {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+body {
+    width: 980px;
+    margin: 0 auto;
+}
+
+
+/* -------------------------------------
+Header styles (Main Module)
+(all the styles inside the < header > or < nav > tags)
+*/
+
+
+/* -------------------------------------
+Content styles (Main Module)
+(all the styles inside the < sections > or < aside > tags)
+*/
+
+h1,
+h3 {
+    font-weight: normal;
+    text-align: center;
+}
+
+h3 {
+    border-bottom: 3px solid black;
+    padding: 5px;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+input {
+    font-size: 16px;
+}
+
+.borderDiv {
+    border: 3px solid black;
+    margin-top: 10px;
+    padding-bottom: 25px;
+}
+
+.leftSide {
+    float: left;
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    box-sizing: border-box;
+}
+
+.rightSide {
+    float: left;
+    width: 40%;
+    margin-right: 5%;
+    margin-right: 5%;
+    box-sizing: border-box;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 15px
+}
+
+label {
+    width: 160px;
+    text-align: right;
+    display: inline-block;
+    padding: 15px;
+}
+
+.inputButtons {
+    margin: 25px auto;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    background: white;
+    border: 3px solid black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+#resetButton {
+    position: absolute;
+    bottom: 25px;
+}
+
+
+/* -------------------------------------
+Footer styles (Main Module)
+(all the styles inside the < footer > tag)
+*/
+
+
+/* -------------------------------------
+place all the desktop styles above this line
+
+Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+
+place all the mobile tables styles bellow this line
+*/

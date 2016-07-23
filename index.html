@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="waitstaff">
+
+<head>
+    <title>Waitstaff Calculator</title>
+
+    <!-- the typical metags-->
+    <meta charset="utf-8">
+
+    <!-- link all the css styles starting with the external ones and then your own styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+
+</head>
+
+<body>
+
+    <div ng-controller="waitCtrl">
+
+        <h1>Waitstaff Calculator Basic</h1>
+
+        <div class="mealDetails leftSide borderDiv">
+            <h3>Enter Meal edtails</h3>
+            <form name="mealPrice" ng-submit="submitDetails()" novalidate>
+                <div>
+                    <label for="mealPrice">Base meal Price: $</label>
+                    <input ng-model="mealPrice" required type="number" step="0.01" />
+                </div>
+                <div>
+                    <label for="taxRate">Tax Rate: %</label>
+                    <input ng-model="taxRate" required type="number" step="0.05" />
+                </div>
+                <div>
+                    <label for="tipPercentage">Tip Percentage: %</label>
+                    <input ng-model="tipPercentage" required type="number" step="0.1" />
+                </div>
+                <div class="error" ng-show="formError != ''">Please enter in valid values for the form</div>
+                <div class="inputButtons">
+                    <button id="submit">Submit</button>
+                    <button ng-click="resetDetails()" id="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="rightSide">
+            <div class="customerCharges borderDiv">
+                <h3>Customer Charges</h3>
+                <div>
+                    <label>Subtotal</label><span>{{subtotal | number:2}}</span>
+                </div>
+                <div>
+                    <label>Tip</label><span>{{tip | number:2}}</span>
+                </div>
+                <hr>
+                <div>
+                    <label>Total</label><span>{{total | number:2}}</span>
+                </div>
+                <div class="earningsInfo borderDiv">
+                    <h3>My Earnings Info</h3>
+                    <div>
+                        <label>Tip Total: </label><span>{{tipTotal | number:2}}</span></div>
+                    <div>
+                        <label>Meal Count: </label><span>{{mealCount | number:0}}</span></div>
+                    <div>
+                        <label>Avg Tip Per Meal: </label><span>{{avgTipPerMeal | number:2}}</span></div>
+                </div>
+            </div>
+
+            <button id="resetButton" ng-click="init()">Reset All</button>
+
+        </div>
+
+        <footer></footer>
+
+        <!-- add all the scripts starting with the external ones and then your own javascript-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+        <script src="javascript/app.js"></script>
+
+</body>
+
+</html>
