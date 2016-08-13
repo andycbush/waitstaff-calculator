@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="waitstaff">
+<html lang="en" ng-app="myApp">
 
 <head>
     <title>Waitstaff Calculator</title>
@@ -13,6 +13,44 @@
 
 </head>
 
+<body ng-app="myApp">
+
+    <section class="container">
+
+        <header>
+            <h1><a href="#/details"><span>Waitstaff Calculator</span></a></h1>
+        </header>
+
+
+        <div class="nav" ng-controller="navCtrl">
+            <ul>
+                <li><a href="#/details"> Meal Details</a></li>
+                <li><a href="#/charges">Charge Overview</a></li>
+                <li><a href="#/earnings">Earnings Info</a></li>
+
+            </ul>
+        </div>
+
+        <div class="content" ng-view></div>
+
+        <div class="lower" ng-controller="resetCtrl">
+            <button class="btn btn-default" ng-click="resetAll()">Reset All</button>
+        </div>
+
+
+    </section>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+    <script src="javascript/app.js" type="text/javascript"></script>
+
+</body>
+
+
+</html>
+
+<!-- first version below
 <body>
 
     <div ng-controller="waitCtrl">
@@ -20,7 +58,7 @@
         <h1>Waitstaff Calculator Basic</h1>
 
         <div class="mealDetails leftSide borderDiv">
-            <h3>Enter Meal edtails</h3>
+            <h3>Enter Meal details</h3>
             <form name="enterPriceForm" ng-submit="submitDetails()" novalidate>
                 <div>
                     <label for="mealPrice">Base meal Price: $</label>
@@ -72,10 +110,9 @@
 
     </div>
 
-    <!-- add all the scripts starting with the external ones and then your own javascript-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="javascript/app.js"></script>
 
 </body>
-
-</html>
+-->
